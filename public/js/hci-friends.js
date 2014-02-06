@@ -15,6 +15,12 @@ function initializePage() {
 		var newName = anagrammedName($(this).text());
 		$(this).text(newName);
 	});
+	$('#send-message').click( function(e) {
+		e.preventDefault();
+		var message = $('#message-field').val();
+		$('#message-field').val("");
+		$('#messages').append("<p>" + message + "</p>");
+	})
 }
 
 function anagrammedName(name) {
